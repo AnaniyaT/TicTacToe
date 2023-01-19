@@ -29,11 +29,15 @@ function showTurn(){
     let Xindicator = document.getElementById("x-indicator");
     let Oindicator = document.getElementById("o-indicator");
     if (playerX){
-        Oindicator.className = "shrink";
-        Xindicator.className = "grow";
+        Oindicator.classList.add("shrink");
+        Oindicator.classList.remove("grow")
+        Xindicator.classList.add("grow");
+        Xindicator.classList.remove("shrink")
     }else{
-        Oindicator.className = "grow";
-        Xindicator.className = "shrink";
+        Oindicator.classList.add("grow")
+        Oindicator.classList.remove("shrink")
+        Xindicator.classList.add("shrink");
+        Xindicator.classList.remove("grow")
     }
 }
 
@@ -43,11 +47,11 @@ function win(winner){
     xScore = document.getElementById("x-score");
     oScore = document.getElementById("o-score");
     if(winner == "X"){
-        winnerP.textContent = "Congrats! X has won";
+        winnerP.textContent = "X has won";
         let score = ~~xScore.textContent + 1;
         xScore.textContent = score.toString();
     }else if(winner == "O"){
-        winnerP.textContent = "Congrats! O has won";
+        winnerP.textContent = "O has won";
         let score = ~~oScore.textContent + 1;
         oScore.textContent = score.toString();
     }else{

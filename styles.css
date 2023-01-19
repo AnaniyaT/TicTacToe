@@ -28,10 +28,12 @@ body{
     box-shadow: 0 0 .7em #333;
 }
 .grow{
-    animation: grow-letter .5s forwards;
+    animation: grow-letter .3s;
+    animation-fill-mode: forwards;
 }
 .shrink{
-    animation: grow-letter .5s reverse forwards;
+    animation: shrink-letter .3s;
+    animation-fill-mode: forwards;
 }
 .gameContainer__info__division{
     width: 33%;
@@ -50,6 +52,10 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     padding: 0 .4em;
     font-weight: bold;
+}
+#o-indicator, #x-indicator{
+    font-size: 3em;
+    color: #bbb;
 }
 #x-score{
     border-right: .1em solid white;
@@ -194,7 +200,11 @@ body{
 }
 @keyframes grow-letter{
     0% {font-size: 3em; color: #bbb;}
-    100% {font-size: 5em;}
+    100% {font-size: 6em; color: white;}
+}
+@keyframes shrink-letter {
+    0% {font-size: 6em; color: white;}
+    100%{font-size: 3em; color: #bbb;}
 }
 
 @media  screen and (max-width: 52em), (max-height: 52em)   {
@@ -211,7 +221,7 @@ body{
             height: 0;
         }
         100% {
-            top: 10%;
+            top: 9%;
             left: 10%;
             border:1em solid white;
             width: 60%;
@@ -234,20 +244,29 @@ body{
             height: 0;
         }
         100% {
-            top: 8%;
-            left: 10%;
+            top: 11%;
+            left: 12%;
             border:.7em solid white;
-            width: 60%;
-            height: 60%;
+            width: 55%;
+            height: 55%;
         }
     
     }
     .gameContainer__info__score p{
         font-size: 2.5em;
     }
+    .boardCell__letter_X1, .boardCell__letter_X2{
+        width: 1em;
+        left: 42%;
+        top: 6%;
+    }
     @keyframes grow-letter{
         0% {font-size: 2em; color: #bbb;}
-        100% {font-size: 4em;}
+        100% {font-size: 4em; color: white;}
     }
+    @keyframes shrink-letter {
+        0% {font-size: 4em; color: white;}
+        100%{font-size: 2em; color: #bbb;}
 
+}
 }
