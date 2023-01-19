@@ -13,7 +13,7 @@ body{
     width: 50em;
     height: 50em;
     display: flex;
-    min-height: 50em;
+    min-height: 20em;
     flex-direction: column;
 }
 .gameContainer__info{
@@ -26,6 +26,17 @@ body{
     align-items: center;
     padding: 0 2em;
     box-shadow: 0 0 .7em #333;
+}
+.grow{
+    animation: grow-letter .5s forwards;
+}
+.shrink{
+    animation: grow-letter .5s reverse forwards;
+}
+.gameContainer__info__division{
+    width: 33%;
+    display: flex;
+    justify-content: center;
 }
 .gameContainer__info p{
     font-size: 3.5em;
@@ -66,16 +77,16 @@ body{
     position: relative;
 }
 .board__cell1, .board__cell4, .board__cell7{
-    border-right: 20px solid white;
+    border-right: 1em solid white;
 }
 .board__cell2, .board__cell5, .board__cell8{
-    border-right: 20px solid white;
+    border-right: 1em solid white;
 }
 .board__cell1, .board__cell2, .board__cell3{
-    border-bottom: 20px solid white;
+    border-bottom: 1em solid white;
 }
 .board__cell4, .board__cell5, .board__cell6{
-    border-bottom: 20px solid white;
+    border-bottom: 1em solid white;
 }
 .boardCell__letter_O{
     border-radius: 50%;
@@ -105,6 +116,41 @@ body{
     animation-fill-mode: forwards;
 }
 
+.winner{
+    position: fixed;
+    background-color: rgb(14, 57, 94);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 50%;
+    height: 30%;
+    border-radius: 10%;
+    padding: 2em;
+    box-shadow: 0 0 3em #333;
+    display: none;
+}
+
+.winner p{
+    font-size: 2em;
+    top: 25%;
+    left: 20%;
+}
+.winner a{
+    top: 60%;
+    left: 38%;
+    background-color: white;
+    color: rgb(14, 57, 94);
+    padding: .5em 1em;
+    border-radius: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.winner a:hover{
+    background-color: #ccc;
+}
+
 @keyframes appear-O{
     0% {
         top: 50%;
@@ -120,7 +166,6 @@ body{
         width: 60%;
         height: 60%;
     }
-
 }
 @keyframes appear-X {
     0%{
@@ -129,4 +174,80 @@ body{
     100%{
         height: 90%;
     }
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes fade {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+        z-index: -1;
+    }
+}
+@keyframes grow-letter{
+    0% {font-size: 3em; color: #bbb;}
+    100% {font-size: 5em;}
+}
+
+@media  screen and (max-width: 52em), (max-height: 52em)   {
+    .gameContainer{
+        width: 40em;
+        height: 40em;
+    }
+    @keyframes appear-O{
+        0% {
+            top: 50%;
+            left: 50%;
+            border: none; 
+            width: 0; 
+            height: 0;
+        }
+        100% {
+            top: 10%;
+            left: 10%;
+            border:1em solid white;
+            width: 60%;
+            height: 60%;
+        }
+    
+    }
+}
+@media  screen and (max-width: 42em), (max-height: 42em){
+    .gameContainer{
+        width: 30em;
+        height: 30em;
+    }
+    @keyframes appear-O{
+        0% {
+            top: 50%;
+            left: 50%;
+            border: none; 
+            width: 0; 
+            height: 0;
+        }
+        100% {
+            top: 8%;
+            left: 10%;
+            border:.7em solid white;
+            width: 60%;
+            height: 60%;
+        }
+    
+    }
+    .gameContainer__info__score p{
+        font-size: 2.5em;
+    }
+    @keyframes grow-letter{
+        0% {font-size: 2em; color: #bbb;}
+        100% {font-size: 4em;}
+    }
+
 }

@@ -11,12 +11,18 @@
 <body>
     <div class="gameContainer">
         <div class="gameContainer__info">
-            <p class="gameContainer__info__x" id="x-indicator">X</p>
-            <div class="gameContainer__info__score">
-                <p id="x-score">0</p>
-                <p id="o-score">0</p>
+            <div class="gameContainer__info__division">
+                <p id="x-indicator">X</p>
             </div>
-            <p class="gameContainer__info__o" id="o-indicator">O</p>
+            <div class="gameContainer__info__division">
+                <div class="gameContainer__info__score">
+                    <p id="x-score">0</p>
+                    <p id="o-score">0</p>
+                </div>
+            </div>
+            <div class="gameContainer__info__division">
+                <p id="o-indicator">O</p>
+            </div>
         </div>
         <div class="gameContainer__playArea">
             <div class="gameContainer__playArea__board">
@@ -58,6 +64,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="winner" id="winner-page">
+        <p id="winner-text">congrats! X has won</p>
+        <a onclick="restart()">Play Again</a>
     </div>
 </body>
 </html>
