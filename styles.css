@@ -68,6 +68,7 @@ body{
     padding: 2em;
     border-radius: 1.5em;
     box-shadow: 0 0 .7em #333;
+    -webkit-tap-highlight-color: transparent;
 }
 .gameContainer__playArea__board{
     width: 80%;
@@ -81,11 +82,8 @@ body{
 .boardCell{
     cursor: pointer;
     position: relative;
-    -webkit-tap-highlight-color: transparent;
 }
-.boardCell:active{
-    background-color: rgb(14, 57, 94);
-}
+
 .board__cell1, .board__cell4, .board__cell7{
     border-right: 1em solid white;
 }

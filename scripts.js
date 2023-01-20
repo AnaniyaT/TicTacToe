@@ -11,7 +11,6 @@ let played = 0
 
 function draw_O(cellNum){
     let selector = "#cell" + cellNum +" :nth-child(1)";
-    console.log(selector);
     let o = document.querySelector(selector);
     o.className = "boardCell__letter_O"
 }
@@ -61,11 +60,9 @@ function win(winner){
     winnerCard.style.display = "flex";
     winnerCard.style.zIndex = "1";
     playing = false;
-    console.log("yayy someone won" + winner);
 }
 
 function checkWinner(){
-    console.log(board);
     if ((board["1"] == board["2"]) && (board["1"] == board["3"]) && (board["1"] != "")){
         win(board["1"]);
     }else if ((board["4"] == board["5"]) && (board["4"] == board["6"]) && (board["4"] != "")){
