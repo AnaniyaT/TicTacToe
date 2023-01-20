@@ -81,7 +81,7 @@ body{
 .boardCell{
     cursor: pointer;
     position: relative;
-    -webkit-tap-highlight-color: rgb(14, 57, 94);
+    -webkit-tap-highlight-color: transparent;
 }
 .boardCell:active{
     background-color: rgb(14, 57, 94);
