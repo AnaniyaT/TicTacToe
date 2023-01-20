@@ -81,6 +81,10 @@ body{
 .boardCell{
     cursor: pointer;
     position: relative;
+    -webkit-tap-highlight-color: rgb(14, 57, 94);
+}
+.boardCell:active{
+    background-color: rgb(14, 57, 94);
 }
 .board__cell1, .board__cell4, .board__cell7{
     border-right: 1em solid white;
@@ -250,7 +254,6 @@ body{
             width: 55%;
             height: 55%;
         }
-    
     }
     .gameContainer__info__score p{
         font-size: 2.5em;
